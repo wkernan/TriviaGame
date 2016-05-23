@@ -11,11 +11,22 @@
 	<div class="container">
 		<div id="main-page" class="text-center">
 			<h1 id="title">Trivia Game</h1>
+			<h1 id="score"></h1>
 			<div class="row" id="questions">
 				<div class="col-md-5" id="quest-image">
 				</div>
 				<div class="col-md-7" id="question">
 				</div>
+			</div>
+			<div class="row" id="scoreboard">
+				<div class="col-md-6" id="incorrect">
+				</div>
+				<div class="col-md-6" id="unanswered">
+				</div>
+			</div>
+			<div id="correct">
+			</div>
+			<div id="result">
 			</div>
 			<div id="timer" class="hide">
 				<h3>Timer: 30s</h3>
@@ -27,6 +38,7 @@
 			  <button type="button" class="list-group-item answer" id="answer4" onClick="guessAnswer(4)"></button>
 			</div>
 		<button class="btn btn-primary btn-lg" id="start-game" onClick="startGame()">Start</button>
+		<button class="btn btn-primary btn-lg hide" id="restart-game" onClick="restart()">Play Again?</button>
 		</div>
 	</div>
 <script src="assets/javascript/app.js"></script>

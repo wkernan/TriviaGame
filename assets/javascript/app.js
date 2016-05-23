@@ -34,10 +34,13 @@ function gameEnd() {
 	clearInterval(timesUpCounter);
 	clearInterval(timeCounter);
 	$('.list-group').addClass('hide');
-	$('#timer').html("<h1>You got " + correct + " questions correct.</h1>");
-	$('#quest-image').html("<h3>You got " + incorrect + " questions incorrect.</h3>");
-	$('#question').html("<h3>You didn't answer " + unanswered + " questions.</h3>");
-	$('#start-game').removeClass('hide');
+	$('#question').addClass('hide');
+	$('#quest-image').addClass('hide');
+	$('#timer').addClass('hide');
+	$('#correct').html("<h1>You got " + correct + " questions correct.</h1>");
+	$('#incorrect').html("<h3>You got " + incorrect + " questions incorrect.</h3>");
+	$('#unanswered').html("<h3>You didn't answer " + unanswered + " questions.</h3>");
+	$('#restart-game').removeClass('hide');
 }
 
 function timer() {
@@ -46,6 +49,7 @@ function timer() {
 };
 
 function nextQuestion() {
+	$('#result').html("");
 	$('.list-group').removeClass('hide');
 	clearInterval(timesUpCounter);
 	clearInterval(timeCounter);
@@ -64,7 +68,7 @@ function timesUp() {
 	clearInterval(timesUpCounter);
 	clearInterval(timeCounter);
 	unanswered++;
-	$('#timer').html("<h3>Time's Up!</h3>");
+	$('#result').html("<h3>Time's Up!</h3>");
 	$('#quest-image').html('<img src="' + questions[count].answer_pic + '">')
 	$('#question').html('<h3>' + questions[count].answer + '</h3>')
 	setTimeout(nextQuestion, 1000 * 6);
@@ -72,10 +76,11 @@ function timesUp() {
 };
 
 function displayQuestion() {
+	$('#timer').removeClass('hide');
+	timeCounter = setInterval(timer, 1000);
 	$('#quest-image').html('<img src="' + questions[count].quest_pic + '">');
 	$('#question').html('<h3>' + questions[count].question + '</h3>');
 	displayAnswers();
-	timeCounter = setInterval(timer, 1000);
 	timesUpCounter = setTimeout(timesUp, 1000 * 30);
 };
 
@@ -94,19 +99,36 @@ function startGame() {
 	//$('')
 };
 
+function restart() {
+correct = 0;
+incorrect = 0;
+unanswered = 0;
+time = 30;
+count = 0;
+$('#result').html("");
+$('#correct').html("");
+$('#incorrect').html("");
+$('#unanswered').html("");
+$('#restart-game').addClass('hide');
+$('.list-group').removeClass('hide');
+$('#question').removeClass('hide');
+$('#quest-image').removeClass('hide');
+displayQuestion();
+};
+
 function guessAnswer(num) {
 	console.log('works');
 	if(num === questions[count].answer_num) {
 		clearInterval(timesUpCounter);
 		clearInterval(timeCounter);
 		correct++;
-		$('#timer').html("<h1>That's Correct!</h1>");
+		$('#result').html("<h1>That's Correct!</h1>");
 		setTimeout(nextQuestion, 1000 * 7);
 	} else {
 		clearInterval(timesUpCounter);
 		clearInterval(timeCounter);
 		incorrect++;
-		$('#timer').html("<h1>That's Incorrect!</h1>");
+		$('#result').html("<h1>That's Incorrect!</h1>");
 		setTimeout(nextQuestion, 1000 * 7);
 	}
 };

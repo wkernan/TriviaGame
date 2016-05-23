@@ -1,7 +1,9 @@
 #main-page {
-	margin-top: 50px;
+	width: 90%;
+	margin: 50px auto 0;
+	border-radius: 15px;
 	height: 600px;
-	background-color: white;
+	background-color: #EEF0E5;
 	border: 1px solid black;
 	padding: 20px;
 }
