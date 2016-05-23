@@ -25,3 +25,9 @@ button.list-group-item {
 	margin-top: 0;
 	margin-bottom: 20px;
 }
+
+button.list-group-item:focus {
+	color: #333333;
+	background-color: #FFFFFF;
+	outline: none;
+}
