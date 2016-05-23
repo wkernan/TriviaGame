@@ -1,11 +1,21 @@
-#main-page {
-	width: 90%;
-	margin: 50px auto 0;
-	border-radius: 15px;
-	height: 600px;
+body {
+	background-color: #EEF0E5;
+	background-image: url('../images/seinfeld_restaurant.jpg');
+}
+
+/*#main-page {
+	width: 75%;
+	margin: 0 auto;
+	border-radius: 0 0 4px 4px;
+	height: 720px;
 	background-color: #EEF0E5;
 	border: 1px solid black;
-	padding: 20px;
+	border-top: none;
+	padding: 0 20px 20px;
+}*/
+
+#start-game {
+	margin-top: 150px;
 }
 
 .hide {
@@ -24,8 +34,7 @@ button.list-group-item {
 }
 
 #title {
-	margin-top: 0;
-	margin-bottom: 20px;
+	width: 50%;
 }
 
 button.list-group-item:focus {

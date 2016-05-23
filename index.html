@@ -9,13 +9,13 @@
 </head>
 <body>
 	<div class="container">
-		<div id="main-page" class="text-center">
-			<h1 id="title">Trivia Game</h1>
+		<div id="main-page" class="text-center jumbotron">
+			<img id="title" src="assets/images/seinfeld_trivia.png">
 			<h1 id="score"></h1>
 			<div class="row" id="questions">
-				<div class="col-md-5" id="quest-image">
+				<div class="col-md-7" id="quest-image">
 				</div>
-				<div class="col-md-7" id="question">
+				<div class="col-md-5" id="question">
 				</div>
 			</div>
 			<div class="row" id="scoreboard">
@@ -37,8 +37,10 @@
 			  <button type="button" class="list-group-item answer" id="answer3" onClick="guessAnswer(3)"></button>
 			  <button type="button" class="list-group-item answer" id="answer4" onClick="guessAnswer(4)"></button>
 			</div>
-		<button class="btn btn-primary btn-lg" id="start-game" onClick="startGame()">Start</button>
-		<button class="btn btn-primary btn-lg hide" id="restart-game" onClick="restart()">Play Again?</button>
+			<div id="result_statement">
+			</div>
+			<button class="btn btn-primary btn-lg" id="start-game" onClick="startGame()">Try Your Luck?</button>
+			<button class="btn btn-primary btn-lg hide" id="restart-game" onClick="restart()">Play Again?</button>
 		</div>
 	</div>
 <script src="assets/javascript/app.js"></script>

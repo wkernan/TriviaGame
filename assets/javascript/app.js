@@ -18,14 +18,14 @@ var questions = [
 		answer_num: 4
 	},
 	{
-		question: "When was the war of 1812?",
-		answer1: "1812",
-		answer2: "1912",
-		answer3: "1712",
-		answer4: "Never happened",
-		quest_pic: 'http://lorempixel.com/400/200',
-		answer_pic: '',
-		answer: "1812",
+		question: "What was George's desription of Elaine's dancing?",
+		answer1: "It's more like a full body, dry heave, set to music.",
+		answer2: "It's a combination of monkey meets Frankenstein.",
+		answer3: "I don't even know how to describe it.",
+		answer4: "Jerry... it was awful.",
+		quest_pic: 'assets/images/elaine_dance.gif',
+		answer_pic: 'assets/images/george_squint.gif',
+		answer: "It's more like a full body, dry heave, set to music.",
 		answer_num: 1
 	}
 ];
