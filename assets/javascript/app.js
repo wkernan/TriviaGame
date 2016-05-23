@@ -14,7 +14,8 @@ $(document).ready(function() {
 			answer4: "8",
 			quest_pic: 'http://lorempixel.com/400/200',
 			answer_pic: '',
-			answer: 4
+			answer: "An octopus has 8 arms",
+			answer_num: 4
 		},
 		{
 			question: "When was the war of 1812?",
@@ -24,7 +25,8 @@ $(document).ready(function() {
 			answer4: "Never happened",
 			quest_pic: 'http://lorempixel.com/400/200',
 			answer_pic: '',
-			answer: 1
+			answer: "1812",
+			answer_num: 1
 		}
 	];
 
@@ -47,7 +49,10 @@ $(document).ready(function() {
 		clearInterval(counter);
 		unanswered++;
 		$('#timer').html("<h3>Time's Up!</h3>");
-		setTimeout(nextQuestion, 1000 * 5);
+		$('#quest-image').html('<img src="' + questions[count].answer_pic + '">')
+		$('#question').html('<h3>' + questions[count].answer + '</h3>')
+		setTimeout(nextQuestion, 1000 * 7);
+		console.log(unanswered);
 	};
 
 	function displayQuestion() {
