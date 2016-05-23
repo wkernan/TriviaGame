@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trivia Game</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="icon" sizes="16x16" href="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ2-nbaNOo6ypWMq0sy1tYaLvZn-2OyuWOSLfeAcqjT4VM9Wk9v1w">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div id="main-page" class="text-center">
+			<h1 id="title">Trivia Game</h1>
+			<div class="row" id="questions">
+				<div class="col-md-5" id="quest-image">
+					<img src="http://lorempixel.com/400/200">
+				</div>
+				<div class="col-md-7" id="question">
+					<h3>This is a test question to see how a question would appear when one is asked. Do you think this looks good?</h3>
+				</div>
+			</div>
+			<div id="timer">
+				<h3>Timer: 30s</h3>
+			</div>
+			<div class="list-group">
+			  <button type="button" class="list-group-item answer" id="answer1">Cras justo odio</button>
+			  <button type="button" class="list-group-item answer" id="answer2">Dapibus ac facilisis in</button>
+			  <button type="button" class="list-group-item answer" id="answer3">Morbi leo risus</button>
+			  <button type="button" class="list-group-item answer" id="answer4">Porta ac consectetur ac</button>
+			</div>
+		<button class="btn btn-primary btn-lg" id="start-game">Start</button>
+		</div>
+	</div>
+<script src="assets/javascript/app.js"></script>
+</body>
+</html>

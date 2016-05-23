@@ -1,0 +1,27 @@
+#main-page {
+	margin-top: 50px;
+	height: 600px;
+	background-color: white;
+	border: 1px solid black;
+	padding: 20px;
+}
+
+.hide {
+	display: none;
+}
+
+.list-group {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 24px;
+}
+
+button.list-group-item {
+	text-align: center;
+}
+
+#title {
+	margin-top: 0;
+	margin-bottom: 20px;
+}
