@@ -10,16 +10,23 @@
 <body>
 	<div class="container">
 		<div id="main-page" class="text-center jumbotron">
+			<div id="question_count">
+			</div>
 			<img id="title" src="assets/images/Seinfeld-Trivia.png">
+			<div id="result">
+			</div>
+			<div id="title-img">
+				<img src="assets/images/happy.gif">
+			</div>
 			<h1 id="score"></h1>
 			<div id="questions">
 				<div id="question">
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-7" id="image">
+				<div class="col-md-5" id="image">
 				</div>
-				<div class="col-md-5" id="answer">
+				<div class="col-md-7" id="answer">
 				</div>
 			</div>
 			<div class="row" id="scoreboard">
@@ -29,8 +36,6 @@
 				</div>
 			</div>
 			<div id="correct">
-			</div>
-			<div id="result">
 			</div>
 			<div id="timer" class="hide">
 				<h3>Timer: 30s</h3>
@@ -43,8 +48,8 @@
 			</div>
 			<div id="result_statement">
 			</div>
-			<button class="btn btn-primary btn-lg" id="start-game" onClick="startGame()">Try Your Luck?</button>
-			<button class="btn btn-primary btn-lg hide" id="restart-game" onClick="restart()">Play Again?</button>
+			<button class="btn btn-default btn-lg" id="start-game" onClick="startGame()">Try Your Luck?</button>
+			<button class="btn btn-default btn-lg hide" id="restart-game" onClick="restart()">Play Again?</button>
 		</div>
 	</div>
 <script src="assets/javascript/app.js"></script>

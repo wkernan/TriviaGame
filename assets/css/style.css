@@ -1,13 +1,31 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600italic);
+@import url(https://fonts.googleapis.com/css?family=Raleway:600italic);
+
 body {
 	background-color: #EEF0E5;
 	background-image: url('../images/seinfeld_restaurant.jpg');
+	font-family: 'Raleway', sans-serif;
+	color: #F51A3F;
+	/*font-family: 'Open Sans', sans-serif;*/
 }
 
 img {
-	width: 200px;
+	width: 300px;
+}
+
+h4,h3,h2,h1 {
+	text-shadow: black .75px .75px;
+}
+
+h4 {
+	margin-top: 5px;
 }
 
 h3 {
+	margin-top: 5px;
+}
+
+h2 {
 	margin-top: 5px;
 }
 
@@ -22,13 +40,18 @@ h3 {
 	padding: 0 20px 20px;
 }*/
 
-#main-page {
-	background-color: #EEF0E5;
-	padding-top:0;
+#question_count {
+	position: fixed;
 }
 
-#start-game {
-	margin-top: 150px;
+#main-page {
+	/*background-image: url('../images/seinfeld.jpg');*/
+	background-color: #0171BB;
+	padding: 20px;
+	margin-top: 80px;
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .hide {
@@ -36,7 +59,7 @@ h3 {
 }
 
 .list-group {
-	width: 50%;
+	width: 75%;
 	margin-left: auto;
 	margin-right: auto;
 	font-size: 24px;
@@ -46,12 +69,16 @@ button.list-group-item {
 	text-align: center;
 }
 
+#title-img img{
+	width: 265px;
+}
+
 #title {
 	width: 50%;
 }
 
 button.list-group-item:focus {
-	color: #333333;
+	color: #555555;
 	background-color: #FFFFFF;
 	outline: none;
 }
