@@ -14,6 +14,7 @@ var questions = [
 		answer3: "The scent of a woman.",
 		answer4: "The lure of the animal.",
 		answer_pic: 'assets/images/kramer_thats_true.gif',
+		wrong_pic: 'assets/images/kramer_wrong.gif',
 		answer: "The lure of the animal.",
 		answer_num: 4,
 		answerAudio: function() {
@@ -28,8 +29,13 @@ var questions = [
 		answer3: "I don't even know how to describe it.",
 		answer4: "Jerry... it was awful.",
 		answer_pic: 'assets/images/elaine_dance.gif',
+		wrong_pic: 'assets/images/elaine_wrong.gif',
 		answer: "It's more like a full body, dry heave, set to music.",
-		answer_num: 1
+		answer_num: 1,
+		answerAudio: function() {
+			var audio = new Audio('');
+			audio.play();
+		}
 	}
 ];
 
@@ -52,6 +58,8 @@ function timer() {
 };
 
 function nextQuestion() {
+	$('#answer').addClass('hide');
+	$('#image').addClass('hide');
 	$('#result').html("");
 	$('.list-group').removeClass('hide');
 	clearInterval(timesUpCounter);
@@ -72,8 +80,8 @@ function timesUp() {
 	clearInterval(timeCounter);
 	unanswered++;
 	$('#result').html("<h3>Time's Up!</h3>");
-	$('#image').html('<img src="' + questions[count].answer_pic + '">')
-	$('#question').html('<h3>' + questions[count].answer + '</h3>')
+	$('#image').html('<img src="' + questions[count].answer_pic + '">');
+	$('#answer').html('<h3>' + questions[count].answer + '</h3>');
 	setTimeout(nextQuestion, 1000 * 6);
 	console.log(unanswered);
 };
@@ -83,6 +91,7 @@ function displayQuestion() {
 	timeCounter = setInterval(timer, 1000);
 	$('#quest-image').html('<img src="' + questions[count].quest_pic + '">');
 	$('#question').html('<h3>' + questions[count].question + '</h3>');
+	$('#question').removeClass('hide');
 	displayAnswers();
 	timesUpCounter = setTimeout(timesUp, 1000 * 30);
 };
@@ -125,6 +134,7 @@ function guessAnswer(num) {
 	console.log('works');
 	console.log(questions[count]);
 	questions[count].answerAudio();
+	$('#question').addClass('hide');
 	if(num === questions[count].answer_num) {
 		clearInterval(timesUpCounter);
 		clearInterval(timeCounter);
@@ -137,6 +147,8 @@ function guessAnswer(num) {
 		clearInterval(timeCounter);
 		incorrect++;
 		$('#result').html("<h1>That's Incorrect!</h1>");
+		$('#image').html("<img src='" + questions[count].wrong_pic + "'>");
+		$('#answer').html('<h3>' + questions[count].answer + '</h3>');
 		setTimeout(nextQuestion, 1000 * 7);
 	}
 };
