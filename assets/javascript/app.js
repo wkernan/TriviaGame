@@ -161,7 +161,7 @@ function timesUp() {
 	$('#result').html("<h2>Time's Up!</h2>");
 	$('#image').html('<img src="' + timesUpGif + '">');
 	$('#answer').html('<h2>Answer: ' + questions[count].answer + '</h2>');
-	setTimeout(nextQuestion, 1000 * 7);
+	setTimeout(nextQuestion, 1000 * 6);
 	console.log(unanswered);
 };
 
