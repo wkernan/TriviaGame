@@ -10,12 +10,18 @@ var timesUpGif = 'assets/images/fire.gif';
 function wrongAudio() {
 	var audio = new Audio('http://www.wavsource.com/snds_2016-05-22_6159520873604738/tv/seinfeld/no_soup.wav');
 	audio.play();
-}
+};
+function timesUpAudio() {
+	var audio = new Audio('assets/audio/cigar.mp3');
+	var otherAudio = new Audio('assets/audio/yell.mp3');
+	audio.play();
+	setTimeout(function(){otherAudio.play()}, 4000);
+};
 function startAudio() {
 	/*ar audio = new Audio('http://www.wavsource.com/snds_2016-05-22_6159520873604738/tv/seinfeld/crazy.wav');*/
 	var audio = new Audio('http://www.wavsource.com/snds_2016-05-22_6159520873604738/tv/seinfeld/giddy-up.wav');
 	audio.play();
-}
+};
 var questions = [
 	{
 		question: "What does Kervorka mean?",
@@ -88,7 +94,7 @@ var questions = [
 		answer: "They're real and they're spectacular!",
 		answer_num: 2,
 		answerAudio: function() {
-			var audio = new Audio('http://www.wavsource.com/snds_2016-05-22_6159520873604738/tv/seinfeld/mansfield.wav');
+			var audio = new Audio('assets/audio/spectec.mp3');
 			audio.play();
 		}
 	}
@@ -142,6 +148,7 @@ function nextQuestion() {
 };
 
 function timesUp() {
+	timesUpAudio();
 	$('.list-group').addClass('hide');
 	$('#image').removeClass('hide');
 	$('#result').removeClass('hide');
@@ -154,7 +161,7 @@ function timesUp() {
 	$('#result').html("<h2>Time's Up!</h2>");
 	$('#image').html('<img src="' + timesUpGif + '">');
 	$('#answer').html('<h2>Answer: ' + questions[count].answer + '</h2>');
-	setTimeout(nextQuestion, 1000 * 6);
+	setTimeout(nextQuestion, 1000 * 7);
 	console.log(unanswered);
 };
 
@@ -178,8 +185,7 @@ function displayAnswers() {
 };
 
 function startGame() {
-	backgroundMusic.pause();
-	backgroundMusic.currentTime = 0;
+	backgroundMusic.volume = .1;
 	startAudio();
 	$('#title-img').addClass('hide');
 	$('#start-game').addClass('hide');
@@ -236,7 +242,10 @@ function guessAnswer(num) {
 	}
 };
 
+backgroundMusic.loop = true;
 backgroundMusic.play();
+
+
 
 /*$(document).ready(function() {
 	backgroundMusic.play();
