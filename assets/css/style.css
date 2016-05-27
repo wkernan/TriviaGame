@@ -29,6 +29,17 @@ h2 {
 	margin-top: 5px;
 }
 
+.volume {
+	margin-top: 30px;
+	cursor: pointer;
+	color: black;
+	font-size: 40px;
+}
+
+.volume:hover {
+	color: white;
+}
+
 /*#main-page {
 	width: 75%;
 	margin: 0 auto;

@@ -2,13 +2,14 @@ var correct = 0;
 var incorrect = 0;
 var unanswered = 0;
 var time = 30;
+var sound = true;
 var count = 0;
 var timeCounter;
 var timesUpCounter;
 var backgroundMusic = new Audio('assets/audio/Seinfeld.mp3');
 var timesUpGif = 'assets/images/fire.gif';
 function wrongAudio() {
-	var audio = new Audio('http://www.wavsource.com/snds_2016-05-22_6159520873604738/tv/seinfeld/no_soup.wav');
+	var audio = new Audio('assets/audio/no_soup.wav');
 	audio.play();
 };
 function timesUpAudio() {
@@ -19,7 +20,7 @@ function timesUpAudio() {
 };
 function startAudio() {
 	/*ar audio = new Audio('http://www.wavsource.com/snds_2016-05-22_6159520873604738/tv/seinfeld/crazy.wav');*/
-	var audio = new Audio('http://www.wavsource.com/snds_2016-05-22_6159520873604738/tv/seinfeld/giddy-up.wav');
+	var audio = new Audio('assets/audio/giddy-up.wav');
 	audio.play();
 };
 var questions = [
@@ -34,7 +35,7 @@ var questions = [
 		answer: "The lure of the animal",
 		answer_num: 4,
 		answerAudio: function() {
-			var audio = new Audio('http://www.wavsource.com/snds_2016-05-22_6159520873604738/tv/seinfeld/kervorka3.wav');
+			var audio = new Audio('assets/audio/kervorka3.wav');
 			audio.play();
 		}
 	},
@@ -49,7 +50,7 @@ var questions = [
 		answer: "It's more like a full body, dry heave, set to music",
 		answer_num: 1,
 		answerAudio: function() {
-			var audio = new Audio('http://www.wavsource.com/snds_2016-05-22_6159520873604738/tv/seinfeld/ah_hah.wav');
+			var audio = new Audio('assets/audio/ah_hah.wav');
 			audio.play();
 		}
 	},
@@ -64,7 +65,7 @@ var questions = [
 		answer: "Get Out!",
 		answer_num: 2,
 		answerAudio: function() {
-			var audio = new Audio('http://www.wavsource.com/snds_2016-05-22_6159520873604738/tv/seinfeld/get_out.wav');
+			var audio = new Audio('assets/audio/get_out.wav');
 			audio.play();
 		}
 	},
@@ -79,7 +80,7 @@ var questions = [
 		answer: "Have sex",
 		answer_num: 3,
 		answerAudio: function() {
-			var audio = new Audio('http://www.wavsource.com/snds_2016-05-22_6159520873604738/tv/seinfeld/save_friendship.wav');
+			var audio = new Audio('assets/audio/save_friendship.wav');
 			audio.play();
 		}
 	},
@@ -97,8 +98,52 @@ var questions = [
 			var audio = new Audio('assets/audio/spectec.mp3');
 			audio.play();
 		}
+	},
+	{
+		question: "What does Jerry agree to wear on 'The Today Show'?",
+		answer1: "Skinny jeans",
+		answer2: "Eye patch",
+		answer3: "Pirate shirt",
+		answer4: "Captains hat",
+		answer_pic: 'assets/images/pirate.gif',
+		wrong_pic: 'assets/images/smirk.gif',
+		answer: 'Pirate shirt',
+		answer_num: 3,
+		answerAudio: function() {
+			var audio = new Audio('assets/audio/pirate.mp3');
+			audio.play();
+		}
+	},
+	{
+		question: "Who is Jerry's sworn enemy, that lives down the hall?",
+		answer1: "Newman",
+		answer2: "Jackie Chiles",
+		answer3: "George Steinbrenner",
+		answer4: "David Puddy",
+		answer_pic: 'assets/images/newman.gif',
+		wrong_pic: 'assets/images/nope.gif',
+		answer: 'Newman',
+		answer_num: 1,
+		answerAudio: function() {
+			var audio = new Audio('assets/audio/hello2.wav');
+			audio.play();
+		}
 	}
 ];
+
+function volumeToggle() {
+	if(sound === true) {
+		backgroundMusic.volume = 0;
+		sound = false;
+		$('#off').addClass('hide');
+		$('#up').removeClass('hide');	
+	} else {
+		backgroundMusic.volume = .1;
+		sound = true;
+		$('#off').removeClass('hide');
+		$('#up').addClass('hide');
+	}
+}
 
 function gameEnd() {
 	clearInterval(timesUpCounter);
