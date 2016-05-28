@@ -7,6 +7,7 @@ var count = 0;
 var timeCounter;
 var timesUpCounter;
 var backgroundMusic = new Audio('assets/audio/Seinfeld.mp3');
+backgroundMusic.volume = .3;
 var timesUpGif = 'assets/images/fire.gif';
 function wrongAudio() {
 	var audio = new Audio('assets/audio/no_soup.wav');
@@ -15,8 +16,8 @@ function wrongAudio() {
 function timesUpAudio() {
 	var audio = new Audio('assets/audio/cigar.mp3');
 	var otherAudio = new Audio('assets/audio/yell.mp3');
-	audio.play();
-	setTimeout(function(){otherAudio.play()}, 4000);
+	setTimeout(function(){audio.play()},1000);
+	setTimeout(function(){otherAudio.play()}, 4500);
 };
 function startAudio() {
 	/*ar audio = new Audio('http://www.wavsource.com/snds_2016-05-22_6159520873604738/tv/seinfeld/crazy.wav');*/
@@ -138,7 +139,7 @@ function volumeToggle() {
 		$('#off').addClass('hide');
 		$('#up').removeClass('hide');	
 	} else {
-		backgroundMusic.volume = .1;
+		backgroundMusic.volume = .3;
 		sound = true;
 		$('#off').removeClass('hide');
 		$('#up').addClass('hide');
@@ -230,7 +231,6 @@ function displayAnswers() {
 };
 
 function startGame() {
-	backgroundMusic.volume = .1;
 	startAudio();
 	$('#title-img').addClass('hide');
 	$('#start-game').addClass('hide');
