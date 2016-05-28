@@ -129,6 +129,21 @@ var questions = [
 			var audio = new Audio('assets/audio/hello2.wav');
 			audio.play();
 		}
+	},
+	{
+		question: "What pitch did Jerry and George give NBC about what their show was going to be about?",
+		answer1: "It's a show about friendship",
+		answer2: "It's a show about nothing",
+		answer3: "It's a show about laughing",
+		answer4: "It's a show about doctors",
+		answer_pic: 'assets/images/nothing.gif',
+		wrong_pic: 'assets/images/jerry_george_nope.gif',
+		answer: "It's a show about nothing",
+		answer_num: 2,
+		answerAudio: function() {
+			var audio = new Audio('assets/audio/nothing.mp3');
+			audio.play();
+		}
 	}
 ];
 
@@ -154,14 +169,14 @@ function gameEnd() {
 	$('#quest-image').addClass('hide');
 	$('#timer').addClass('hide');
 	if(correct === 1) {
-		$('#correct').html("<h1>You got " + correct + " question correct!</h1>");
+		$('#correct').html("<h1>" + correct + " question correct!</h1>");
 	} else {
-		$('#correct').html("<h1>You got " + correct + " questions correct!</h1>");
+		$('#correct').html("<h1>" + correct + " questions correct!</h1>");
 	}
 	if(incorrect === 1) {
-		$('#incorrect').html("<h2>You got " + incorrect + " question incorrect</h2>");
+		$('#incorrect').html("<h2>" + incorrect + " question incorrect</h2>");
 	} else {
-		$('#incorrect').html("<h2>You got " + incorrect + " questions incorrect</h2>");
+		$('#incorrect').html("<h2>" + incorrect + " questions incorrect</h2>");
 	};
 	if(unanswered === 1) {
 		$('#unanswered').html("<h2>" + unanswered + " question unanswered</h2>");
